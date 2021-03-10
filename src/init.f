@@ -3,9 +3,6 @@ C---------------------------------------------------------------
 C
       INTEGER FORM(100,20),FORM2(60,20),INST(50,20),LONG(400,20)
       INTEGER HINT(50,20), V(30), T(30), D(100), SAVAR(400), W(10)
-      INTEGER SAT /'SAT '/, SUND /'SUN '/, OPN(2) /'09:0','0:00'/
-      INTEGER TME(6),OPEN(2)/'21:0','0:00'/
-      LOGICAL*1 WORD(5)/'M','U','T','Z',' '/,INPUT(5)
 C
 C
       INTEGER ITEMS(30), VALUE(30), WHER(10), DOOR(100)
@@ -154,16 +151,11 @@ C     CALL FTNCMD('ASSIGN 10=AWCC:OBJECT;')
 C     CALL FTNCMD('ASSIGN 11=AWCC:INST;')
 C     CALL FTNCMD('ASSIGN 12=AWCC:LONG;')
 C***
-      CALL CMS('FI      ','8       ','DISK    ','HINT    ','CQDATA  ',
-     *'(       ','LRECL  ','80      ','RECFM   ','F       ')
-      CALL CMS('FI      ','9       ','DISK    ','SHORT   ','CQDATA  ',
-     *'(       ','LRECL  ','80      ','RECFM   ','F       ')
-      CALL CMS('FI      ','10      ','DISK    ','OBJECT  ','CQDATA  ',
-     *'(       ','LRECL  ','80      ','RECFM   ','F       ')
-      CALL CMS('FI      ','11      ','DISK    ','INST    ','CQDATA  ',
-     *'(       ','LRECL  ','80      ','RECFM   ','F       ')
-      CALL CMS('FI      ','12      ','DISK    ','LONG    ','CQDATA  ',
-     *'(       ','LRECL  ','80      ','RECFM   ','F       ')
+      OPEN(UNIT=8,FILE='hint.dat',STATUS='OLD',FORM='FORMATTED')
+      OPEN(UNIT=9,FILE='short.dat',STATUS='OLD',FORM='FORMATTED')
+      OPEN(UNIT=10,FILE='object.dat',STATUS='OLD',FORM='FORMATTED')
+      OPEN(UNIT=11,FILE='inst.dat',STATUS='OLD',FORM='FORMATTED')
+      OPEN(UNIT=12,FILE='long.dat',STATUS='OLD',FORM='FORMATTED')
 C
       DO 20 I=1,100
            READ(9,1001,END=30,ERR=30)(FORM(I,J),J=1,20)
@@ -184,11 +176,11 @@ C
            READ(8,1001,END=120,ERR=120)(HINT(I,J),J=1,20)
   110 CONTINUE
   120 CONTINUE
-C     CALL FTNCMD('RELEASE 9;')
-C     CALL FTNCMD('RELEASE 10;')
-C     CALL FTNCMD('RELEASE 11;')
-C     CALL FTNCMD('RELEASE 12;')
-C     CALL FTNCMD('RELEASE 8;')
+      CLOSE(8)
+      CLOSE(9)
+      CLOSE(10)
+      CLOSE(11)
+      CLOSE(12)
  1001 FORMAT(20A4)
  1002 FORMAT('0 I''M SORRY, BUT THE CASTLE IS CLOSED RIGHT NOW.'/
      1'       CASTLE HOURS ARE :'//'   MONDAY THRU FRIDAY-----'
