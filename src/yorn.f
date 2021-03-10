@@ -1,7 +1,5 @@
       SUBROUTINE YORN(II)
-      IMPLICIT INTEGER (A - Z)
-C
-      DATA   Y   / 'Y   ' /,   N   / 'N   '/
+      CHARACTER ANS
 C
    10 WRITE(6,2000)
  2000 FORMAT(' ')
@@ -9,8 +7,8 @@ C
  1001 FORMAT(A1)
 C
       II = 1
-      IF (ANS .EQ. Y) GOTO 100
-      IF (ANS .NE. N) GOTO 30
+      IF (ANS .EQ. 'Y') GOTO 100
+      IF (ANS .NE. 'N') GOTO 30
            II = 0
            GOTO 100
    30 CONTINUE
