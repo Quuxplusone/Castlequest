@@ -2,54 +2,55 @@ C------------------------------------------------------
       SUBROUTINE INPUT(ACTION)
       IMPLICIT INTEGER (A - Z)
       INTEGER ACTION(2), VERBS(2,80), NOUNS(2,76),
-     2        BLANK /' '/, N, V, NVERBS /80/,
+     2        BLANK, N, V, NVERBS /80/,
      3        NNOUNS /76/
 C
       INTEGER NOUN(3), VERB(3)
 C
       EQUIVALENCE (VERB(1), V), (NOUN(1), N)
 C
-      DATA VERBS  /'ATTA', 15, 'BACK', 40, 'BREA', 37, 'BRIE', 61,
-     2             'CHOP', 37, 'CLIM',  9, 'CLOS', 28, 'CROS', 43,
-     3             'D   ', 10, 'DEBU', 59, 'DOWN', 10, 'DRIN', 24,
-     4             'DROP', 12, 'E   ',  3, 'EAST',  3, 'EAT ', 23,
-     5             'ENTE', 13, 'EXIT', 14, 'EXTI', 34, 'FEED', 22,
-     6             'FILL', 49, 'FIRE', 54, 'FUCK', 19, 'GOTO', 51,
-     7             'HELP', 50, 'HINT', 50, 'HONK', 45, 'IN  ', 13,
-     8             'INVE', 26, 'JUMP', 25, 'KILL', 16, 'L   ', 52,
-     9             'LEAV', 14, 'LEFT', 52, 'LIGH', 32, 'LOAD', 18,
-     X             'LOCK', 29, 'LONG', 60, 'LOOK', 35, 'MELT', 42,
-     1             'N   ',  1, 'NE  ',  2, 'NORT',  1, 'NW  ',  8,
-     2             'OFF ', 33, 'ON  ', 31, 'OPEN', 27, 'OUT ', 14,
-     3             'POOF', 56, 'POUR', 39, 'QUIT', 44, 'R   ', 53,
-     4             'READ', 48, 'REST', 58, 'RIGH', 53, 'S   ',  5,
-     5             'SAVE', 57, 'SCOR', 36, 'SE  ',  4, 'SHOO', 54,
-     6             'SHOW', 20, 'SOUT',  5, 'STAB', 21, 'SUSP', 57,
-     7             'SW  ',  6, 'SWIM', 41, 'T   ', 11, 'TAKE', 11,
-     8             'THRO', 17, 'TIE ', 46, 'U   ',  9, 'UNLO', 30,
-     9             'UNTI', 47, 'UP  ',  9, 'VERB', 60, 'W   ',  7,
-     X             'WAKE', 55, 'WATE', 38, 'WAVE', 20, 'WEST',  7/
+      DATA VERBS  /4hATTA, 15, 4hBACK, 40, 4hBREA, 37, 4hBRIE, 61,
+     2             4hCHOP, 37, 4hCLIM,  9, 4hCLOS, 28, 4hCROS, 43,
+     3             4hD   , 10, 4hDEBU, 59, 4hDOWN, 10, 4hDRIN, 24,
+     4             4hDROP, 12, 4hE   ,  3, 4hEAST,  3, 4hEAT , 23,
+     5             4hENTE, 13, 4hEXIT, 14, 4hEXTI, 34, 4hFEED, 22,
+     6             4hFILL, 49, 4hFIRE, 54, 4hFUCK, 19, 4hGOTO, 51,
+     7             4hHELP, 50, 4hHINT, 50, 4hHONK, 45, 4hIN  , 13,
+     8             4hINVE, 26, 4hJUMP, 25, 4hKILL, 16, 4hL   , 52,
+     9             4hLEAV, 14, 4hLEFT, 52, 4hLIGH, 32, 4hLOAD, 18,
+     X             4hLOCK, 29, 4hLONG, 60, 4hLOOK, 35, 4hMELT, 42,
+     1             4hN   ,  1, 4hNE  ,  2, 4hNORT,  1, 4hNW  ,  8,
+     2             4hOFF , 33, 4hON  , 31, 4hOPEN, 27, 4hOUT , 14,
+     3             4hPOOF, 56, 4hPOUR, 39, 4hQUIT, 44, 4hR   , 53,
+     4             4hREAD, 48, 4hREST, 58, 4hRIGH, 53, 4hS   ,  5,
+     5             4hSAVE, 57, 4hSCOR, 36, 4hSE  ,  4, 4hSHOO, 54,
+     6             4hSHOW, 20, 4hSOUT,  5, 4hSTAB, 21, 4hSUSP, 57,
+     7             4hSW  ,  6, 4hSWIM, 41, 4hT   , 11, 4hTAKE, 11,
+     8             4hTHRO, 17, 4hTIE , 46, 4hU   ,  9, 4hUNLO, 30,
+     9             4hUNTI, 47, 4hUP  ,  9, 4hVERB, 60, 4hW   ,  7,
+     X             4hWAKE, 55, 4hWATE, 38, 4hWAVE, 20, 4hWEST,  7/
 C
-      DATA NOUNS  /'ACID', 25, 'ALL ', 31, 'AXE ',  3, 'BARS', 54,
-     2             'BAT ', 55, 'BLOO',  5, 'BOAR', 56, 'BOAT', 14,
-     3             'BOOK', 46, 'BOTT', 18, 'BULL',  2, 'BUTL', 49,
-     4             'CASK', 40, 'CHAM',  7, 'CIGA', 27, 'COFF', 40,
-     5             'COMP', 57, 'COUN', 39, 'CROS', 19, 'CRYS', 30,
-     6             'CYCL', 78, 'DOOR', 47, 'DRAW', 48, 'FIGU', 24,
-     7             'FIRE', 34, 'FLAS', 25, 'FOOD', 22, 'GLAC', 79,
-     8             'GNOM', 77, 'GRAP', 16, 'GUN ', 20, 'HATC',  3,
-     9             'HOOK', 16, 'HUNC',  8, 'ICE ', 79, 'IVOR', 12,
-     X             'JADE', 24, 'KERO',  1, 'KEY ',  4, 'LAMP', 21,
-     1             'LANT', 21, 'LIGH', 21, 'LOCK', 33, 'MAST', 39,
-     2             'MATC', 15, 'MIRR', 50, 'MOAT', 51, 'MONE', 29,
-     3             'NOTE', 52, 'OIL ',  1, 'PAPE', 10, 'PEN ', 11,
-     4             'PIST', 20, 'QUIL', 11, 'ROOM', 45, 'ROPE',  9,
-     5             'ROWB', 14, 'RUBY', 23, 'SAPP', 28, 'SHUT', 38,
-     6             'STAK',  6, 'STAT', 17, 'SWAN', 30, 'SWOR', 12,
-     7             'TORC', 13, 'TUNN', 41, 'VAMP', 39, 'VLAD', 39,
-     8             'WATE', 26, 'WERE', 76, 'WIND', 37, 'WIZA', 80,
-     9             'WOLF', 76, '31  ', 43, '59  ', 44, '8   ', 42/
+      DATA NOUNS  /4hACID, 25, 4hALL , 31, 4hAXE ,  3, 4hBARS, 54,
+     2             4hBAT , 55, 4hBLOO,  5, 4hBOAR, 56, 4hBOAT, 14,
+     3             4hBOOK, 46, 4hBOTT, 18, 4hBULL,  2, 4hBUTL, 49,
+     4             4hCASK, 40, 4hCHAM,  7, 4hCIGA, 27, 4hCOFF, 40,
+     5             4hCOMP, 57, 4hCOUN, 39, 4hCROS, 19, 4hCRYS, 30,
+     6             4hCYCL, 78, 4hDOOR, 47, 4hDRAW, 48, 4hFIGU, 24,
+     7             4hFIRE, 34, 4hFLAS, 25, 4hFOOD, 22, 4hGLAC, 79,
+     8             4hGNOM, 77, 4hGRAP, 16, 4hGUN , 20, 4hHATC,  3,
+     9             4hHOOK, 16, 4hHUNC,  8, 4hICE , 79, 4hIVOR, 12,
+     X             4hJADE, 24, 4hKERO,  1, 4hKEY ,  4, 4hLAMP, 21,
+     1             4hLANT, 21, 4hLIGH, 21, 4hLOCK, 33, 4hMAST, 39,
+     2             4hMATC, 15, 4hMIRR, 50, 4hMOAT, 51, 4hMONE, 29,
+     3             4hNOTE, 52, 4hOIL ,  1, 4hPAPE, 10, 4hPEN , 11,
+     4             4hPIST, 20, 4hQUIL, 11, 4hROOM, 45, 4hROPE,  9,
+     5             4hROWB, 14, 4hRUBY, 23, 4hSAPP, 28, 4hSHUT, 38,
+     6             4hSTAK,  6, 4hSTAT, 17, 4hSWAN, 30, 4hSWOR, 12,
+     7             4hTORC, 13, 4hTUNN, 41, 4hVAMP, 39, 4hVLAD, 39,
+     8             4hWATE, 26, 4hWERE, 76, 4hWIND, 37, 4hWIZA, 80,
+     9             4hWOLF, 76, 4h31  , 43, 4h59  , 44, 4h8   , 42/
 C
+      BLANK = TRANSFER('    ', BLANK)
       ACTION(1) = 0
       ACTION(2) = 0
     3 WRITE(6,2004)
