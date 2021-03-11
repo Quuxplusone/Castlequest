@@ -894,7 +894,7 @@ C     ---STAB---
   247 CONTINUE
       IF (MASTER .EQ. 0) GOTO 201
       IF (MASTER .EQ. 4 .OR. ROOM .NE. 43) GOTO 740
-      IF (ITEMS( 6) .NE. -1) GOTO 250
+      IF (ITEMS( 6) .NE.  -1) GOTO 250
            WRITE(6,1087)
            MASTER = 4
            ITEMS( 6) = 0
