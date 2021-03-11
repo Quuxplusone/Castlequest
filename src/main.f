@@ -1157,9 +1157,9 @@ C     ---LIGHT---
       GOTO 25
   320 CONTINUE
   321 IF (OBJECT .NE. 15) GOTO 323
-          MATCH = 1
-          IF (ROOM.GT.40 .AND. (LAMP.EQ.0.OR.LAMP.EQ.3)) GOTO 410
-          GOTO 712
+           MATCH = 1
+           IF (ROOM.GT.40 .AND. (LAMP.EQ.0.OR.LAMP.EQ.3)) GOTO 410
+           GOTO 712
   323 IF (OBJECT .NE. 27) GOTO 477
   324      IF (ITEMS(15) .NE. -1) GOTO 322
            IF (MATCH     .NE.  1) GOTO 322
