@@ -801,7 +801,7 @@ C     ---LOAD---
       GUN = .TRUE.
       GOTO 800
   119 CONTINUE
-C     ---FUCK---
+C    ---FUCK---
       IF (OBJECT .NE. 0) GOTO 261
       WRITE(6,1047)
       GOTO 25
