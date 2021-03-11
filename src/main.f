@@ -675,8 +675,8 @@ C     ---ATTACK---
   230 CONTINUE
       IF (OBJECT .NE. 78) GOTO 231
       IF (ROOM .NE.  86 .OR. HOLE) GOTO 201
-            WRITE(6,1122)
-            GOTO 25
+           WRITE(6,1122)
+           GOTO 25
   231 CONTINUE
       IF (OBJECT .NE. 39) GOTO 234
       IF (MASTER .EQ. 4) GOTO 234
