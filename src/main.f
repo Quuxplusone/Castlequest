@@ -1275,7 +1275,7 @@ C     ---BREAK---
 C     ---POUR---
       IF (OBJECT .GT. NITEMS) GOTO 740
       IF (ITEMS(OBJECT) .NE. -1) GOTO 201
-      IF (OBJECT .EQ.  5 .OR. OBJECT .EQ. 25. OR.
+      IF (OBJECT .EQ.  5 .OR. OBJECT .EQ. 25 .OR.
      2    OBJECT .EQ. 26) GOTO 112
       IF (OBJECT .EQ. 7) GOTO 385
       IF (OBJECT .NE. 1) GOTO 740
