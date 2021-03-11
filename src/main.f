@@ -289,7 +289,7 @@ C      ...CYCLOPS IN ROOM...
       II = 0
       CALL OBJ(ITEMS,ROOM,SCORE,VALUE)
       IF ((NUMOVE.GT.15 .AND. (ROOM.LE.25.AND.ROOM.GE.4))
-     2           .OR.WOLF)       CALL WWOLF(II,WOLF)
+     2           .OR. WOLF)      CALL WWOLF(II,WOLF)
       IF ((ROOM.GE.45.AND.ROOM.LE.92) .OR. GNOME) CALL GGNOME(II,GNOME)
       IF (II .GT. 0) GOTO 902
       IF (.NOT. WOLF .OR. ITEMS( 8) .NE. -1) GOTO 24
