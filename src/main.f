@@ -1428,9 +1428,9 @@ C     ---FILL---
            IF (BOTTLE) GOTO 218
            IF ((ROOM.EQ.32.OR.ROOM.EQ.40.OR.ROOM.EQ.68) .OR.
      2       ITEMS(26) .EQ. ROOM) OBJECT = 26
-      IF (ITEMS(5) .EQ. ROOM) OBJECT = 5
-      IF (OBJECT .EQ. 18) GOTO 740
-      GOTO 111
+           IF (ITEMS(5) .EQ. ROOM) OBJECT = 5
+           IF (OBJECT .EQ. 18) GOTO 740
+           GOTO 111
   427 IF (OBJECT .NE. 21) GOTO 740
            IF (ITEMS(1) .NE. -1) GOTO 740
                 IF (LAMP .EQ. 2) LAMP=1
