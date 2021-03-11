@@ -795,7 +795,7 @@ C     ---LOAD---
       IF (OBJECT .NE. 20) GOTO 700
       IF (ITEMS(20) .NE. -1) GOTO 720
       IF (ITEMS( 2) .EQ. -1) GOTO 274
-           WRITE (6,1007)
+           WRITE(6,1007)
            GOTO 25
   274 IF (.NOT. GUN) NUMB=NUMB-1
       GUN = .TRUE.
