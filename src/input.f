@@ -57,16 +57,10 @@ C
       CALL FREAD(VERB,NOUN)
 C     CALL MOVEC(4,VERB,V,21)
 C     CALL MOVEC(4,NOUN,N,21)
-      LOW=1
-      HIGH=NVERBS
-  18  IF(HIGH.LT.LOW) GOTO 21
-      I=(LOW+HIGH)/2
-      IF(V-VERBS(1,I)) 19,22,20
-  19  HIGH=I-1
-      GOTO 18
-  20  LOW=I+1
-      GOTO 18
-   21 CONTINUE
+      I = 1
+  18  IF (V .EQ. VERBS(1,I)) GOTO 22
+      I = I + 1
+      IF (I.LE.NVERBS) GOTO 18
       IF (N .NE. BLANK) WRITE(6,2002) NOUN
       IF (N .EQ. BLANK) WRITE(6,2003)
       GOTO 3
@@ -76,16 +70,10 @@ C
    22 CONTINUE
       ACTION(1)=VERBS(2,I)
       IF (N .EQ. BLANK) GOTO 45
-      LOW=1
-      HIGH=NNOUNS
-  26  IF(HIGH.LT.LOW) GOTO 30
-      I=(LOW+HIGH)/2
-      IF(N-NOUNS(1,I)) 27,40,28
-  27  HIGH=I-1
-      GOTO 26
-  28  LOW=I+1
-      GOTO 26
-  30  CONTINUE
+      I = 1
+   26 IF (N .EQ. NOUNS(1,I)) GOTO 40
+      I = I + 1
+      IF (I .LE. NNOUNS) GOTO 26
       IF (ACTION(1) .EQ. 19) GOTO 40
    31 CONTINUE
       WRITE(6,2001) VERB
