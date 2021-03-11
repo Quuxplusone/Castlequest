@@ -1098,7 +1098,7 @@ C     ---CLOSE---
       IF (WIND2 .NE. 1) GOTO 800
            WRITE(6,1031)
            GOTO 25
-  288 IF (OBJECT .NE. 48) GOTO 29
+  288 IF (OBJECT .NE. 48) GOTO 290
       IF (ROOM .NE. 1) GOTO 201
       IF (ITEMS(19) .EQ. 1) ITEMS(19)=0
       GOTO 800
