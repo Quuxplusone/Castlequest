@@ -727,8 +727,8 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0680       230 CONTINUE                                                          CAS06750
    ISN 0681           IF (OBJECT .NE. 78) GOTO 231                                      CAS06760
    ISN 0683           IF (ROOM .NE.  86 .OR. HOLE) GOTO 201                             CAS06770
-   ISN 0685                 WRITE(6,1122)                                               CAS06780
-   ISN 0686                 GOTO 25                                                     CAS06790
+   ISN 0685                WRITE(6,1122)                                                CAS06780
+   ISN 0686                GOTO 25                                                      CAS06790
    ISN 0687       231 CONTINUE                                                          CAS06800
    ISN 0688           IF (OBJECT .NE. 39) GOTO 234                                      CAS06810
    ISN 0690           IF (MASTER .EQ. 4) GOTO 234                                       CAS06820
@@ -835,7 +835,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0808           GOTO 112                                                          CAS07750
    ISN 0809       380 CONTINUE                                                          CAS07760
    ISN 0810           IF (OBJECT.EQ.12 .AND. ROOM.EQ.99 .AND. (.NOT.MASECT)) GOTO 767   CAS07770
-   ISN 0812           IF (OBJECT.EQ.12 .AND. ROOM.EQ.99 .AND. WIZ) GOTO 765             CAS07780
+   ISN 0812           IF (OBJECT.EQ.12 .AND. ROOM.EQ.93 .AND. WIZ) GOTO 765             CAS07780
    ISN 0814           IF (GNOME) GOTO 770                                               CAS07790
    ISN 0816           IF (OBJECT .EQ. 12) ITEMS(12)=ROOM                                CAS07800
    ISN 0818           IF (OBJECT .EQ. 3 .AND. ROOM.LT.95) ITEMS( 3) = ROOM              CAS07810
@@ -855,13 +855,13 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0841           IF (OBJECT .NE. 20) GOTO 700                                      CAS07950
    ISN 0843           IF (ITEMS(20) .NE. -1) GOTO 720                                   CAS07960
    ISN 0845           IF (ITEMS( 2) .EQ. -1) GOTO 274                                   CAS07970
-   ISN 0847                WRITE (6,1007)                                               CAS07980
+   ISN 0847                WRITE(6,1007)                                                CAS07980
    ISN 0848                GOTO 25                                                      CAS07990
    ISN 0849       274 IF (.NOT. GUN) NUMB=NUMB-1                                        CAS08000
    ISN 0851           GUN = .TRUE.                                                      CAS08010
    ISN 0852           GOTO 800                                                          CAS08020
    ISN 0853       119 CONTINUE                                                          CAS08030
-                C     ---FUCK---                                                        CAS08040
+                C    ---FUCK---                                                         CAS08040
    ISN 0854           IF (OBJECT .NE. 0) GOTO 261                                       CAS08050
    ISN 0856           WRITE(6,1047)                                                     CAS08060
    ISN 0857           GOTO 25                                                           CAS08070
@@ -962,7 +962,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0973       247 CONTINUE                                                          CAS08940
    ISN 0974           IF (MASTER .EQ. 0) GOTO 201                                       CAS08950
    ISN 0976           IF (MASTER .EQ. 4 .OR. ROOM .NE. 43) GOTO 740                     CAS08960
-   ISN 0978           IF (ITEMS( 6) .NE. -1) GOTO 250                                   CAS08970
+   ISN 0978           IF (ITEMS( 6) .NE.  -1) GOTO 250                                  CAS08970
    ISN 0980                WRITE(6,1087)                                                CAS08980
    ISN 0981                MASTER = 4                                                   CAS08990
    ISN 0982                ITEMS( 6) = 0                                                CAS09000
@@ -1182,7 +1182,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 1243           IF (WIND2 .NE. 1) GOTO 800                                        CAS10980
    ISN 1245                WRITE(6,1031)                                                CAS10990
    ISN 1246                GOTO 25                                                      CAS11000
-   ISN 1247       288 IF (OBJECT .NE. 48) GOTO 29                                       CAS11010
+   ISN 1247       288 IF (OBJECT .NE. 48) GOTO 290                                      CAS11010
    ISN 1249           IF (ROOM .NE. 1) GOTO 201                                         CAS11020
    ISN 1251           IF (ITEMS(19) .EQ. 1) ITEMS(19)=0                                 CAS11030
    ISN 1253           GOTO 800                                                          CAS11040
@@ -1245,9 +1245,9 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 1327           GOTO 25                                                           CAS11570
    ISN 1328       320 CONTINUE                                                          CAS11580
    ISN 1329       321 IF (OBJECT .NE. 15) GOTO 323                                      CAS11590
-   ISN 1331               MATCH = 1                                                     CAS11600
-   ISN 1332               IF (ROOM.GT.40 .AND. (LAMP.EQ.0.OR.LAMP.EQ.3)) GOTO 410       CAS11610
-   ISN 1334               GOTO 712                                                      CAS11620
+   ISN 1331                MATCH = 1                                                    CAS11600
+   ISN 1332                IF (ROOM.GT.40 .AND. (LAMP.EQ.0.OR.LAMP.EQ.3)) GOTO 410      CAS11610
+   ISN 1334                GOTO 712                                                     CAS11620
    ISN 1335       323 IF (OBJECT .NE. 27) GOTO 477                                      CAS11630
    ISN 1337       324      IF (ITEMS(15) .NE. -1) GOTO 322                              CAS11640
    ISN 1339                IF (MATCH     .NE.  1) GOTO 322                              CAS11650
@@ -1275,7 +1275,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                 C     ---OFF---                                                         CAS11870
    ISN 1367           IF (OBJECT .EQ. 0) OBJECT = 21                                    CAS11880
    ISN 1369       134 CONTINUE                                                          CAS11890
-                C     ---EXTINGUISH---                                                  CAS11900
+                C     --EXTINGUISH---                                                   CAS11900
    ISN 1370           IF (OBJECT .EQ. 34) GOTO 391                                      CAS11910
    ISN 1372           IF (OBJECT .GT. NITEMS) GOTO 700                                  CAS11920
    ISN 1374           IF (ITEMS(OBJECT) .NE. -1 .AND.                                   CAS11930
@@ -1295,7 +1295,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 1392                ITEMS(26)=0                                                  CAS12070
    ISN 1393                BOTTLE = .FALSE.                                             CAS12080
    ISN 1394                WATER  = .FALSE.                                             CAS12090
-   ISN 1395                FIRE    = .FALSE.                                            CAS12100
+   ISN 1395                FIRE     = .FALSE.                                           CAS12100
    ISN 1396                WRITE(6,1103)                                                CAS12110
    ISN 1397                GOTO 25                                                      CAS12120
    ISN 1398       394 IF (OBJECT .NE. 13) GOTO 392                                      CAS12130
@@ -1372,7 +1372,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                 C     ---POUR---                                                        CAS12750
    ISN 1476           IF (OBJECT .GT. NITEMS) GOTO 740                                  CAS12760
    ISN 1478           IF (ITEMS(OBJECT) .NE. -1) GOTO 201                               CAS12770
-   ISN 1480           IF (OBJECT .EQ.  5 .OR. OBJECT .EQ. 25. OR.                       CAS12780
+   ISN 1480           IF (OBJECT .EQ.  5 .OR. OBJECT .EQ. 25 .OR.                       CAS12780
                      2    OBJECT .EQ. 26) GOTO 112                                      CAS12790
    ISN 1482           IF (OBJECT .EQ. 7) GOTO 385                                       CAS12800
    ISN 1484           IF (OBJECT .NE. 1) GOTO 740                                       CAS12810
@@ -1533,9 +1533,9 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 1667                IF (BOTTLE) GOTO 218                                         CAS14280
    ISN 1669                IF ((ROOM.EQ.32.OR.ROOM.EQ.40.OR.ROOM.EQ.68) .OR.            CAS14290
                      2       ITEMS(26) .EQ. ROOM) OBJECT = 26                           CAS14300
-   ISN 1671           IF (ITEMS(5) .EQ. ROOM) OBJECT = 5                                CAS14310
-   ISN 1673           IF (OBJECT .EQ. 18) GOTO 740                                      CAS14320
-   ISN 1675           GOTO 111                                                          CAS14330
+   ISN 1671                IF (ITEMS(5) .EQ. ROOM) OBJECT = 5                           CAS14310
+   ISN 1673                IF (OBJECT .EQ. 18) GOTO 740                                 CAS14320
+   ISN 1675                GOTO 111                                                     CAS14330
    ISN 1676       427 IF (OBJECT .NE. 21) GOTO 740                                      CAS14340
    ISN 1678                IF (ITEMS(1) .NE. -1) GOTO 740                               CAS14350
    ISN 1680                     IF (LAMP .EQ. 2) LAMP=1                                 CAS14360
@@ -1597,7 +1597,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 1729           GOTO 25                                                           CAS14880
    ISN 1730       154 CONTINUE                                                          CAS14890
                 C     ---SHOOT---                                                       CAS14900
-   ISN 1731           IF (ITEMS(20) .NE. -1) GOTO 700                                   CAS14910
+   ISN 1731           IF (ITEMS(20) .NE. -1)  GOTO 700                                  CAS14910
    ISN 1733           IF (GUN) GOTO 480                                                 CAS14920
    ISN 1735                WRITE(6,1054)                                                CAS14930
    ISN 1736                GOTO 25                                                      CAS14940
@@ -1792,8 +1792,8 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 1944           LAMP = 0                                                          CAS16710
    ISN 1945           NUMB   = 0                                                        CAS16720
    ISN 1946           SCORE  = SCORE - 10                                               CAS16730
-   ISN 1947           GNOME  = .FALSE.                                                  CAS16740
-   ISN 1948           WOLF   = .FALSE.                                                  CAS16750
+   ISN 1947           GNOME = .FALSE.                                                   CAS16740
+   ISN 1948           WOLF  = .FALSE.                                                   CAS16750
    ISN 1949           IF (ITEMS(20) .EQ. -1) GUN   = .FALSE.                            CAS16760
    ISN 1951           IF (ITEMS(18) .EQ. -1) BOTTLE= .FALSE.                            CAS16770
 
@@ -1938,7 +1938,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 2088      1056 FORMAT('0  You just murdered an innocent hunchback.')             CAS18050
    ISN 2089      1057 FORMAT('0  There is nothing here to shoot.')                      CAS18060
    ISN 2090      1058 FORMAT('0  The bullet does not penetrate the bat''s thick hide.') CAS18070
-   ISN 2091      1059 FORMAT('0  You swan dive off the tower and drown in the moat.')   CAS18080
+   ISN 2091      1059 FORMAT('0  You swan dive off the tower and drown in the moat .')  CAS18080
    ISN 2092      1060 FORMAT('0  You don''t have the sword with you.')                  CAS18090
    ISN 2093      1061 FORMAT('0  The acid dissolves the bars.  The window is clear.')   CAS18100
    ISN 2094      1062 FORMAT('0  The werewolf howls in pain and runs away.')            CAS18110
@@ -1958,7 +1958,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 2105      1073 FORMAT('0  OK, from now on I will give only short descriptions.') CAS18250
    ISN 2106      1074 FORMAT('0  You have nothing to carry it in.')                     CAS18260
    ISN 2107      1075 FORMAT('0  You have nothing to light it with.')                   CAS18270
-   ISN 2108      1076 FORMAT('0  I hate to tell you this, but you can''t swim.')        CAS18280
+   ISN 2108      1076 FORMAT('0  I hate to tell you this, but I can''t swim.')          CAS18280
    ISN 2109      1077 FORMAT('0  You fall in the dark and break your neck.')            CAS18290
    ISN 2110      1078 FORMAT('0  You haven''t any water.')                              CAS18300
    ISN 2111      1079 FORMAT('0  You bring it to the height of ecstasy.')               CAS18310
@@ -2033,8 +2033,8 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      2       '   His awesome magic prevents you from attacking.')       CAS18960
    ISN 2162      1130 FORMAT('0  A note materializes on the wall which reads:')         CAS18970
    ISN 2163      1131 FORMAT('0  EMERGENCY EXIT--The mirror maze will lead you')        CAS18980
-   ISN 2164      1132 FORMAT('0  to the locked door.  The exit lies within.')           CAS18990
-   ISN 2165      1133 FORMAT('0  The wizard raises his staff. You are'                  CAS19000
+   ISN 2164      1132 FORMAT('   to the locked door.  The exit lies within.')           CAS18990
+   ISN 2165      1133 FORMAT('0  The wizard raises his staff. You are',                 CAS19000
                      2       ' blinded by a sudden explosion of light.')                CAS19010
    ISN 2166      1134 FORMAT('0  The walls of the cavern tremble as you unleash the',   CAS19020
                      2  /,   '   terrible power contained in the sword.')               CAS19030
