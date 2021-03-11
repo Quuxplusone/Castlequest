@@ -436,7 +436,7 @@ C     ...HATCH (GOING UP)...
   631 CONTINUE
 C     ...PRECIPICE...
       IF ((ROOM .NE. 83 .OR. LROOM .NE. 84) .AND.
-     2    (ROOM .NE. 84 .OR .LROOM .NE. 83)) GOTO 633
+     2    (ROOM .NE. 84 .OR. LROOM .NE. 83)) GOTO 633
            IF (.NOT. PREC) ROOM=0
            GOTO 102
   633 CONTINUE
