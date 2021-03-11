@@ -218,11 +218,11 @@ C     ...SPECIAL ROOM CONDITIONS...
   501 CONTINUE
       IF (ROOM  .NE. 1) GOTO 505
       IF (SHUTTR .EQ. 0) GOTO 502
-            II = WIND1 + 405
-            CALL DES(II)
-            IF (ITEMS(17) .EQ. 29) CALL DES(428)
-            II=0
-            GOTO 504
+           II = WIND1 + 405
+           CALL DES(II)
+           IF (ITEMS(17) .EQ. 29) CALL DES(428)
+           II=0
+           GOTO 504
   502 CONTINUE
       CALL DES(417)
   504 IF (ROPE .EQ. 2) II=413
