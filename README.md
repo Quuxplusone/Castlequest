@@ -23,9 +23,31 @@ The `src` directory contains `.f` and `.dat` files that have
 been mechanically extracted from `castlequest.ocr.txt` using
 command-line tools such as `cut -b 17-88`.
 
-The `Makefile` in the `src` directory does not yet actually work,
-because the Fortran code uses several Fortran IV-isms such as
-treating strings as integers, and because it depends on VS Fortran
-intrinsics such as `CMS` to open and read the record-structured
-data files. Arthur hopes to get something working eventually.
-Patches welcome.
+
+## How to compile and play
+
+I'm still deciding how to organize the patches in the long term,
+so these instructions may change. For now, my patches are in a
+separate git branch named `patches`:
+
+    git checkout patches
+    cd src
+    make
+    ./cquest | asa
+
+In order for `make` to work, you'll need to have either `f77` or
+`gfortran` in your path.
+
+In order for your input to be recognized, you'll need to enter
+all your text in ALL CAPS. I recommend turning on CAPS LOCK while
+you play.
+
+The game's output uses "[carriage control](https://en.wikipedia.org/wiki/ASA_carriage_control_characters)":
+when it prints the character `0` in column 1, it's expecting that
+the printer hardware will turn that into an extra newline.
+Naturally, modern terminals don't do that. But many POSIX systems
+(including Mac OSX) come with a utility program named `asa` that
+can interpret those carriage-control characters for you. If your
+computer lacks `asa`, you can hack it together in a couple lines
+of your favorite scripting language; or, just deal with the extra
+`0` characters and fewer newlines.
