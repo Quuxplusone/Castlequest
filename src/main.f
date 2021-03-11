@@ -216,7 +216,7 @@ C     ...SPECIAL ROOM CONDITIONS...
       II = 400 + BUT
       GOTO 550
   501 CONTINUE
-      IF (ROOM .NE. 1) GOTO 505
+      IF (ROOM  .NE. 1) GOTO 505
       IF (SHUTTR .EQ. 0) GOTO 502
             II = WIND1 + 405
             CALL DES(II)
