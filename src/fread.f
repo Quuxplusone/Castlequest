@@ -55,9 +55,9 @@ C
    23 GOTO 100
 C
    30 CONTINUE
-      REWIND 5
-      WRITE(UNIT=6,FMT=HUH)
+      WRITE(6,1002) HUH
       GOTO 5
+ 1002 FORMAT('0  ',A20,/,' ')
 C
   100 CONTINUE
       DO 110 KK=1,3
