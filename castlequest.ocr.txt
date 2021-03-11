@@ -21,10 +21,10 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                 C     LOCK   = 0=LOCKED,1=1ST #,2=2ND #,3=OPEN.                         CAS00130
                 C     WIND1  = WINDOW IN ROOM 1 (0=NAILED,1=BROKEN,2=BARRED,3=OPEN)     CAS00140
                 C     DOOR(I)= DOOR IN ROOM I (0=LOCKED,1=CLOSED,2=OPEN)                CAS00150
-                C     SHUTTR = STATUS OF SHUTTER (0=CLOSED,1=OPEN)                      CAS00160
+                C     SHUTTR = STATUS OF SHUTTER (0=CLOSED, 1=OPEN)                     CAS00160
                 C     BUT    = BUTLER(0=SLEEPING,1=AWAKE,2=HOLDING NOTE,3=GONE FOR GOOD,CAS00170
                 C                     4=DEAD AS A DOORNAIL.                             CAS00180
-                C     BAT    = STATUS OF BAR (0=GONE,1=BLOCKING WAY,HUNGRY)             CAS00190
+                C     BAT    = STATUS OF BAT (0=GONE,1=BLOCKING WAY,HUNGRY)             CAS00190
                 C     NOTE   = NUMBER OF NOTE BUTLER IS HOLDING.                        CAS00200
                 C     NDEATH = NUMBER OF TIMES PLAYER HAS DIED.                         CAS00210
                 C     LAMP   =STATUS OF LAMP (0=OFF,1=ON,2=DIM,3=EMPTY)                 CAS00220
@@ -139,16 +139,16 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                 Comment out the parameter fetch and check code:                         CAS01230
                 C     CALL PAR(PARSTG,PARLEN,PARMAX,1,1)                                CAS01240
                 C     DO 2 JJ=1,PARLEN                                                  CAS01250
-                C       IF(EQUC(PARSTG(JJ),COMMA)) NUMCOM=NUMCOM+1                      CAS01260
-                C       IF(EQUC(PARSTG(JJ),COMMA)) GOTO 2                               CAS01270
-                C       GOTO(7,9),NUMCOM                                                CAS01280
-                C       PAR1(JJ)=PARSTG(JJ)                                             CAS01290
-                C 7     GOTO 2                                                          CAS01300
-                C       CONTINUE                                                        CAS01310
-                C       PAR2(JJ=FLAG)=PARSTG(JJ)                                        CAS01320
-                C       GOTO 2                                                          CAS01330
+                C        IF(EQUC(PARSTG(JJ),COMMA)) NUMCOM=NUMCOM+1                     CAS01260
+                C        IF(EQUC(PARSTG(JJ),COMMA)) GOTO 2                              CAS01270
+                C        GOTO(7,9),NUMCOM                                               CAS01280
+                C        PAR1(JJ)=PARSTG(JJ)                                            CAS01290
+                C        GOTO 2                                                         CAS01300
+                C 7      CONTINUE                                                       CAS01310
+                C        PAR2(JJ=FLAG)=PARSTG(JJ)                                       CAS01320
+                C        GOTO 2                                                         CAS01330
                 C 9   CONTINUE                                                          CAS01340
-                C       PAR3(JJ=FLAG)=PARSTG(JJ)                                        CAS01350
+                C        PAR3(JJ=FLAG)=PARSTG(JJ)                                       CAS01350
                 C 2   CONTINUE                                                          CAS01360
                 C     IF(LCOMC(4,PAR1(1),DEBU(1)) .EQ.0.OR.                             CAS01370
                 C    1LCOMC(4,PAR2(1),DEBU(1)) .EQ. 0 .OR.                              CAS01380
@@ -236,13 +236,13 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0105           II = 400 + BUT                                                    CAS02160
    ISN 0106           GOTO 550                                                          CAS02170
    ISN 0107       501 CONTINUE                                                          CAS02180
-   ISN 0108           IF (ROOM .NE. 1) GOTO 505                                         CAS02190
+   ISN 0108           IF (ROOM  .NE. 1) GOTO 505                                        CAS02190
    ISN 0110           IF (SHUTTR .EQ. 0) GOTO 502                                       CAS02200
-   ISN 0112                 II = WIND1 + 405                                            CAS02210
-   ISN 0113                 CALL DES(II)                                                CAS02220
-   ISN 0114                 IF (ITEMS(17) .EQ. 29) CALL DES(428)                        CAS02230
-   ISN 0116                 II=0                                                        CAS02240
-   ISN 0117                 GOTO 504                                                    CAS02250
+   ISN 0112                II = WIND1 + 405                                             CAS02210
+   ISN 0113                CALL DES(II)                                                 CAS02220
+   ISN 0114                IF (ITEMS(17) .EQ. 29) CALL DES(428)                         CAS02230
+   ISN 0116                II=0                                                         CAS02240
+   ISN 0117                GOTO 504                                                     CAS02250
    ISN 0118       502 CONTINUE                                                          CAS02260
    ISN 0119           CALL DES(417)                                                     CAS02270
 
@@ -291,7 +291,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0176                IF (.NOT. HOLE .AND. ITEMS(27) .EQ. -3) WRITE(6,1119)        CAS02670
    ISN 0178                GOTO 550                                                     CAS02680
    ISN 0179       523 CONTINUE                                                          CAS02690
-   ISN 0180           IF (ROOM .NE. 93) GOTO 527                                        CAS02700
+   ISN 0180           IF (ROOM .NE. 93) GOTO 525                                        CAS02700
    ISN 0182                IF (WIZ) WRITE(6,1128)                                       CAS02710
    ISN 0184                GOTO 550                                                     CAS02720
    ISN 0185       525 CONTINUE                                                          CAS02730
@@ -317,7 +317,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0207           II = 0                                                            CAS02890
    ISN 0208           CALL OBJ(ITEMS,ROOM,SCORE,VALUE)                                  CAS02900
    ISN 0209           IF ((NUMOVE.GT.15 .AND. (ROOM.LE.25.AND.ROOM.GE.4))               CAS02910
-                     2           .OR.WOLF)       CALL WWOLF(II,WOLF)                    CAS02920
+                     2           .OR. WOLF)      CALL WWOLF(II,WOLF)                    CAS02920
    ISN 0211           IF ((ROOM.GE.45.AND.ROOM.LE.92) .OR. GNOME) CALL GGNOME(II,GNOME) CAS02930
    ISN 0213           IF (II .GT. 0) GOTO 902                                           CAS02940
    ISN 0215           IF (.NOT. WOLF .OR. ITEMS( 8) .NE. -1) GOTO 24                    CAS02950
@@ -424,10 +424,10 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0316       621 CONTINUE                                                          CAS03920
                 C     ...JUMP FROM SMOKING ROOM...                                      CAS03930
    ISN 0317           IF (ROOM .NE. 39 .OR. LROOM .NE. 10) GOTO 623                     CAS03940
-   ISN 0319       622       IF (WIND2 .EQ. 3) LROOM = 0                                 CAS03950
-   ISN 0321                 IF (WIND2 .EQ. 3) GOTO 103                                  CAS03960
-   ISN 0323                      WRITE(6,1006)                                          CAS03970
-   ISN 0324                      GOTO 106                                               CAS03980
+   ISN 0319       622      IF (WIND2 .EQ. 3) LROOM = 0                                  CAS03950
+   ISN 0321                IF (WIND2 .EQ. 3) GOTO 103                                   CAS03960
+   ISN 0323                     WRITE(6,1006)                                           CAS03970
+   ISN 0324                     GOTO 106                                                CAS03980
    ISN 0325       623 CONTINUE                                                          CAS03990
                 C     ...FIRE...                                                        CAS04000
    ISN 0326           IF (ROOM .NE. 48 .OR. LROOM .NE. 47) GOTO 625                     CAS04010
@@ -439,7 +439,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0330                     WRITE(6,1101)                                           CAS04030
    ISN 0331                     GOTO 106                                                CAS04040
    ISN 0332       625 CONTINUE                                                          CAS04050
-                C     ...END OF GAME...                                                 CAS04060
+                C      ...END OF GAME...                                                CAS04060
    ISN 0333           IF (ROOM .NE. 70 .OR. LROOM .NE. 71) GOTO 626                     CAS04070
    ISN 0335                DO 628 K=1,NITEMS                                            CAS04080
    ISN 0336                      IF (ITEMS(K) .EQ. 71) ITEMS(K)=70                      CAS04090
@@ -472,7 +472,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0370       631 CONTINUE                                                          CAS04360
                 C     ...PRECIPICE...                                                   CAS04370
    ISN 0371           IF ((ROOM .NE. 83 .OR. LROOM .NE. 84) .AND.                       CAS04380
-                     2    (ROOM .NE. 84 .OR .LROOM .NE. 83)) GOTO 633                   CAS04390
+                     2    (ROOM .NE. 84 .OR. LROOM .NE. 83)) GOTO 633                   CAS04390
    ISN 0373                IF (.NOT. PREC) ROOM=0                                       CAS04400
    ISN 0375                GOTO 102                                                     CAS04410
    ISN 0376       633 CONTINUE                                                          CAS04420
