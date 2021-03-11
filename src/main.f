@@ -392,10 +392,10 @@ C     ...ROPE OUT WINDOW...
   621 CONTINUE
 C     ...JUMP FROM SMOKING ROOM...
       IF (ROOM .NE. 39 .OR. LROOM .NE. 10) GOTO 623
-  622       IF (WIND2 .EQ. 3) LROOM = 0
-            IF (WIND2 .EQ. 3) GOTO 103
-                 WRITE(6,1006)
-                 GOTO 106
+  622      IF (WIND2 .EQ. 3) LROOM = 0
+           IF (WIND2 .EQ. 3) GOTO 103
+                WRITE(6,1006)
+                GOTO 106
   623 CONTINUE
 C     ...FIRE...
       IF (ROOM .NE. 48 .OR. LROOM .NE. 47) GOTO 625
