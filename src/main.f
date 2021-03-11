@@ -1207,7 +1207,7 @@ C     --EXTINGUISH---
            ITEMS(26)=0
            BOTTLE = .FALSE.
            WATER  = .FALSE.
-           FIRE    = .FALSE.
+           FIRE     = .FALSE.
            WRITE(6,1103)
            GOTO 25
   394 IF (OBJECT .NE. 13) GOTO 392
