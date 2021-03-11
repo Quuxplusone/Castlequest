@@ -13,10 +13,10 @@ C     GUN    = STAUS OF GUN (0=NOTHING,1=LOADED)
 C     LOCK   = 0=LOCKED,1=1ST #,2=2ND #,3=OPEN.
 C     WIND1  = WINDOW IN ROOM 1 (0=NAILED,1=BROKEN,2=BARRED,3=OPEN)
 C     DOOR(I)= DOOR IN ROOM I (0=LOCKED,1=CLOSED,2=OPEN)
-C     SHUTTR = STATUS OF SHUTTER (0=CLOSED,1=OPEN)
+C     SHUTTR = STATUS OF SHUTTER (0=CLOSED, 1=OPEN)
 C     BUT    = BUTLER(0=SLEEPING,1=AWAKE,2=HOLDING NOTE,3=GONE FOR GOOD,
 C                     4=DEAD AS A DOORNAIL.
-C     BAT    = STATUS OF BAR (0=GONE,1=BLOCKING WAY,HUNGRY)
+C     BAT    = STATUS OF BAT (0=GONE,1=BLOCKING WAY,HUNGRY)
 C     NOTE   = NUMBER OF NOTE BUTLER IS HOLDING.
 C     NDEATH = NUMBER OF TIMES PLAYER HAS DIED.
 C     LAMP   =STATUS OF LAMP (0=OFF,1=ON,2=DIM,3=EMPTY)
@@ -123,16 +123,16 @@ C***
 Comment out the parameter fetch and check code:
 C     CALL PAR(PARSTG,PARLEN,PARMAX,1,1)
 C     DO 2 JJ=1,PARLEN
-C       IF(EQUC(PARSTG(JJ),COMMA)) NUMCOM=NUMCOM+1
-C       IF(EQUC(PARSTG(JJ),COMMA)) GOTO 2
-C       GOTO(7,9),NUMCOM
-C       PAR1(JJ)=PARSTG(JJ)
-C 7     GOTO 2
-C       CONTINUE
-C       PAR2(JJ=FLAG)=PARSTG(JJ)
-C       GOTO 2
+C        IF(EQUC(PARSTG(JJ),COMMA)) NUMCOM=NUMCOM+1
+C        IF(EQUC(PARSTG(JJ),COMMA)) GOTO 2
+C        GOTO(7,9),NUMCOM
+C        PAR1(JJ)=PARSTG(JJ)
+C        GOTO 2
+C 7      CONTINUE
+C        PAR2(JJ=FLAG)=PARSTG(JJ)
+C        GOTO 2
 C 9   CONTINUE
-C       PAR3(JJ=FLAG)=PARSTG(JJ)
+C        PAR3(JJ=FLAG)=PARSTG(JJ)
 C 2   CONTINUE
 C     IF(LCOMC(4,PAR1(1),DEBU(1)) .EQ.0.OR.
 C    1LCOMC(4,PAR2(1),DEBU(1)) .EQ. 0 .OR.
@@ -216,13 +216,13 @@ C     ...SPECIAL ROOM CONDITIONS...
       II = 400 + BUT
       GOTO 550
   501 CONTINUE
-      IF (ROOM .NE. 1) GOTO 505
+      IF (ROOM  .NE. 1) GOTO 505
       IF (SHUTTR .EQ. 0) GOTO 502
-            II = WIND1 + 405
-            CALL DES(II)
-            IF (ITEMS(17) .EQ. 29) CALL DES(428)
-            II=0
-            GOTO 504
+           II = WIND1 + 405
+           CALL DES(II)
+           IF (ITEMS(17) .EQ. 29) CALL DES(428)
+           II=0
+           GOTO 504
   502 CONTINUE
       CALL DES(417)
   504 IF (ROPE .EQ. 2) II=413
@@ -267,7 +267,7 @@ C      ...CYCLOPS IN ROOM...
            IF (.NOT. HOLE .AND. ITEMS(27) .EQ. -3) WRITE(6,1119)
            GOTO 550
   523 CONTINUE
-      IF (ROOM .NE. 93) GOTO 527
+      IF (ROOM .NE. 93) GOTO 525
            IF (WIZ) WRITE(6,1128)
            GOTO 550
   525 CONTINUE
@@ -289,7 +289,7 @@ C      ...CYCLOPS IN ROOM...
       II = 0
       CALL OBJ(ITEMS,ROOM,SCORE,VALUE)
       IF ((NUMOVE.GT.15 .AND. (ROOM.LE.25.AND.ROOM.GE.4))
-     2           .OR.WOLF)       CALL WWOLF(II,WOLF)
+     2           .OR. WOLF)      CALL WWOLF(II,WOLF)
       IF ((ROOM.GE.45.AND.ROOM.LE.92) .OR. GNOME) CALL GGNOME(II,GNOME)
       IF (II .GT. 0) GOTO 902
       IF (.NOT. WOLF .OR. ITEMS( 8) .NE. -1) GOTO 24
@@ -392,10 +392,10 @@ C     ...ROPE OUT WINDOW...
   621 CONTINUE
 C     ...JUMP FROM SMOKING ROOM...
       IF (ROOM .NE. 39 .OR. LROOM .NE. 10) GOTO 623
-  622       IF (WIND2 .EQ. 3) LROOM = 0
-            IF (WIND2 .EQ. 3) GOTO 103
-                 WRITE(6,1006)
-                 GOTO 106
+  622      IF (WIND2 .EQ. 3) LROOM = 0
+           IF (WIND2 .EQ. 3) GOTO 103
+                WRITE(6,1006)
+                GOTO 106
   623 CONTINUE
 C     ...FIRE...
       IF (ROOM .NE. 48 .OR. LROOM .NE. 47) GOTO 625
@@ -403,7 +403,7 @@ C     ...FIRE...
                 WRITE(6,1101)
                 GOTO 106
   625 CONTINUE
-C     ...END OF GAME...
+C      ...END OF GAME...
       IF (ROOM .NE. 70 .OR. LROOM .NE. 71) GOTO 626
            DO 628 K=1,NITEMS
                  IF (ITEMS(K) .EQ. 71) ITEMS(K)=70
@@ -436,7 +436,7 @@ C     ...HATCH (GOING UP)...
   631 CONTINUE
 C     ...PRECIPICE...
       IF ((ROOM .NE. 83 .OR. LROOM .NE. 84) .AND.
-     2    (ROOM .NE. 84 .OR .LROOM .NE. 83)) GOTO 633
+     2    (ROOM .NE. 84 .OR. LROOM .NE. 83)) GOTO 633
            IF (.NOT. PREC) ROOM=0
            GOTO 102
   633 CONTINUE
