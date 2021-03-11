@@ -56,7 +56,7 @@ C
 C
    30 CONTINUE
       REWIND 5
-      WRITE(UNIT=6,FMT=HUH)
+      WRITE(6,1001) HUH
       GOTO 5
 C
   100 CONTINUE
