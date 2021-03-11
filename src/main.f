@@ -775,7 +775,7 @@ C              get passed the bars and retrieve the statue.
       GOTO 112
   380 CONTINUE
       IF (OBJECT.EQ.12 .AND. ROOM.EQ.99 .AND. (.NOT.MASECT)) GOTO 767
-      IF (OBJECT.EQ.12 .AND. ROOM.EQ.99 .AND. WIZ) GOTO 765
+      IF (OBJECT.EQ.12 .AND. ROOM.EQ.93 .AND. WIZ) GOTO 765
       IF (GNOME) GOTO 770
       IF (OBJECT .EQ. 12) ITEMS(12)=ROOM
       IF (OBJECT .EQ. 3 .AND. ROOM.LT.95) ITEMS( 3) = ROOM
