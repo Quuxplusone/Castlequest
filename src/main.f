@@ -1488,7 +1488,7 @@ C     ---RIGHT---
       GOTO 25
   154 CONTINUE
 C     ---SHOOT---
-      IF (ITEMS(20) .NE. -1) GOTO 700
+      IF (ITEMS(20) .NE. -1) GOTO  700
       IF (GUN) GOTO 480
            WRITE(6,1054)
            GOTO 25
