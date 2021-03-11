@@ -267,7 +267,7 @@ C      ...CYCLOPS IN ROOM...
            IF (.NOT. HOLE .AND. ITEMS(27) .EQ. -3) WRITE(6,1119)
            GOTO 550
   523 CONTINUE
-      IF (ROOM .NE. 93) GOTO 527
+      IF (ROOM .NE. 93) GOTO 525
            IF (WIZ) WRITE(6,1128)
            GOTO 550
   525 CONTINUE
