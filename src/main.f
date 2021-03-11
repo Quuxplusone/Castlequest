@@ -1187,7 +1187,7 @@ C     ---LIGHT---
 C     ---OFF---
       IF (OBJECT .EQ. 0) OBJECT = 21
   134 CONTINUE
-C     ---EXTINGUISH---
+C     --EXTINGUISH---
       IF (OBJECT .EQ. 34) GOTO 391
       IF (OBJECT .GT. NITEMS) GOTO 700
       IF (ITEMS(OBJECT) .NE. -1 .AND.
