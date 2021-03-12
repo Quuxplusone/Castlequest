@@ -675,8 +675,8 @@ C     ---ATTACK---
   230 CONTINUE
       IF (OBJECT .NE. 78) GOTO 231
       IF (ROOM .NE.  86 .OR. HOLE) GOTO 201
-            WRITE(6,1122)
-            GOTO 25
+           WRITE(6,1122)
+           GOTO 25
   231 CONTINUE
       IF (OBJECT .NE. 39) GOTO 234
       IF (MASTER .EQ. 4) GOTO 234
@@ -775,7 +775,7 @@ C              get passed the bars and retrieve the statue.
       GOTO 112
   380 CONTINUE
       IF (OBJECT.EQ.12 .AND. ROOM.EQ.99 .AND. (.NOT.MASECT)) GOTO 767
-      IF (OBJECT.EQ.12 .AND. ROOM.EQ.99 .AND. WIZ) GOTO 765
+      IF (OBJECT.EQ.12 .AND. ROOM.EQ.93 .AND. WIZ) GOTO 765
       IF (GNOME) GOTO 770
       IF (OBJECT .EQ. 12) ITEMS(12)=ROOM
       IF (OBJECT .EQ. 3 .AND. ROOM.LT.95) ITEMS( 3) = ROOM
@@ -795,13 +795,13 @@ C     ---LOAD---
       IF (OBJECT .NE. 20) GOTO 700
       IF (ITEMS(20) .NE. -1) GOTO 720
       IF (ITEMS( 2) .EQ. -1) GOTO 274
-           WRITE (6,1007)
+           WRITE(6,1007)
            GOTO 25
   274 IF (.NOT. GUN) NUMB=NUMB-1
       GUN = .TRUE.
       GOTO 800
   119 CONTINUE
-C     ---FUCK---
+C    ---FUCK---
       IF (OBJECT .NE. 0) GOTO 261
       WRITE(6,1047)
       GOTO 25
@@ -894,7 +894,7 @@ C     ---STAB---
   247 CONTINUE
       IF (MASTER .EQ. 0) GOTO 201
       IF (MASTER .EQ. 4 .OR. ROOM .NE. 43) GOTO 740
-      IF (ITEMS( 6) .NE. -1) GOTO 250
+      IF (ITEMS( 6) .NE.  -1) GOTO 250
            WRITE(6,1087)
            MASTER = 4
            ITEMS( 6) = 0
@@ -1098,7 +1098,7 @@ C     ---CLOSE---
       IF (WIND2 .NE. 1) GOTO 800
            WRITE(6,1031)
            GOTO 25
-  288 IF (OBJECT .NE. 48) GOTO 29
+  288 IF (OBJECT .NE. 48) GOTO 290
       IF (ROOM .NE. 1) GOTO 201
       IF (ITEMS(19) .EQ. 1) ITEMS(19)=0
       GOTO 800
@@ -1157,9 +1157,9 @@ C     ---LIGHT---
       GOTO 25
   320 CONTINUE
   321 IF (OBJECT .NE. 15) GOTO 323
-          MATCH = 1
-          IF (ROOM.GT.40 .AND. (LAMP.EQ.0.OR.LAMP.EQ.3)) GOTO 410
-          GOTO 712
+           MATCH = 1
+           IF (ROOM.GT.40 .AND. (LAMP.EQ.0.OR.LAMP.EQ.3)) GOTO 410
+           GOTO 712
   323 IF (OBJECT .NE. 27) GOTO 477
   324      IF (ITEMS(15) .NE. -1) GOTO 322
            IF (MATCH     .NE.  1) GOTO 322
@@ -1187,7 +1187,7 @@ C     ---LIGHT---
 C     ---OFF---
       IF (OBJECT .EQ. 0) OBJECT = 21
   134 CONTINUE
-C     ---EXTINGUISH---
+C     --EXTINGUISH---
       IF (OBJECT .EQ. 34) GOTO 391
       IF (OBJECT .GT. NITEMS) GOTO 700
       IF (ITEMS(OBJECT) .NE. -1 .AND.
@@ -1207,7 +1207,7 @@ C     ---EXTINGUISH---
            ITEMS(26)=0
            BOTTLE = .FALSE.
            WATER  = .FALSE.
-           FIRE    = .FALSE.
+           FIRE     = .FALSE.
            WRITE(6,1103)
            GOTO 25
   394 IF (OBJECT .NE. 13) GOTO 392
@@ -1275,7 +1275,7 @@ C     ---BREAK---
 C     ---POUR---
       IF (OBJECT .GT. NITEMS) GOTO 740
       IF (ITEMS(OBJECT) .NE. -1) GOTO 201
-      IF (OBJECT .EQ.  5 .OR. OBJECT .EQ. 25. OR.
+      IF (OBJECT .EQ.  5 .OR. OBJECT .EQ. 25 .OR.
      2    OBJECT .EQ. 26) GOTO 112
       IF (OBJECT .EQ. 7) GOTO 385
       IF (OBJECT .NE. 1) GOTO 740
@@ -1428,9 +1428,9 @@ C     ---FILL---
            IF (BOTTLE) GOTO 218
            IF ((ROOM.EQ.32.OR.ROOM.EQ.40.OR.ROOM.EQ.68) .OR.
      2       ITEMS(26) .EQ. ROOM) OBJECT = 26
-      IF (ITEMS(5) .EQ. ROOM) OBJECT = 5
-      IF (OBJECT .EQ. 18) GOTO 740
-      GOTO 111
+           IF (ITEMS(5) .EQ. ROOM) OBJECT = 5
+           IF (OBJECT .EQ. 18) GOTO 740
+           GOTO 111
   427 IF (OBJECT .NE. 21) GOTO 740
            IF (ITEMS(1) .NE. -1) GOTO 740
                 IF (LAMP .EQ. 2) LAMP=1
@@ -1488,7 +1488,7 @@ C     ---RIGHT---
       GOTO 25
   154 CONTINUE
 C     ---SHOOT---
-      IF (ITEMS(20) .NE. -1) GOTO 700
+      IF (ITEMS(20) .NE. -1) GOTO  700
       IF (GUN) GOTO 480
            WRITE(6,1054)
            GOTO 25
@@ -1671,8 +1671,8 @@ C     ---DEATH AND REINCARNATION---
       LAMP = 0
       NUMB   = 0
       SCORE  = SCORE - 10
-      GNOME  = .FALSE.
-      WOLF   = .FALSE.
+      GNOME = .FALSE.
+      WOLF  = .FALSE.
       IF (ITEMS(20) .EQ. -1) GUN   = .FALSE.
       IF (ITEMS(18) .EQ. -1) BOTTLE= .FALSE.
       IF (ITEMS(26) .EQ. -1) WATER = .FALSE.
@@ -1805,7 +1805,7 @@ C    *********
  1056 FORMAT('0  You just murdered an innocent hunchback.')
  1057 FORMAT('0  There is nothing here to shoot.')
  1058 FORMAT('0  The bullet does not penetrate the bat''s thick hide.')
- 1059 FORMAT('0  You swan dive off the tower and drown in the moat.')
+ 1059 FORMAT('0  You swan dive off the tower and drown in the moat .')
  1060 FORMAT('0  You don''t have the sword with you.')
  1061 FORMAT('0  The acid dissolves the bars.  The window is clear.')
  1062 FORMAT('0  The werewolf howls in pain and runs away.')
@@ -1825,7 +1825,7 @@ C    *********
  1073 FORMAT('0  OK, from now on I will give only short descriptions.')
  1074 FORMAT('0  You have nothing to carry it in.')
  1075 FORMAT('0  You have nothing to light it with.')
- 1076 FORMAT('0  I hate to tell you this, but you can''t swim.')
+ 1076 FORMAT('0  I hate to tell you this, but I can''t swim.')
  1077 FORMAT('0  You fall in the dark and break your neck.')
  1078 FORMAT('0  You haven''t any water.')
  1079 FORMAT('0  You bring it to the height of ecstasy.')
@@ -1896,8 +1896,8 @@ C    *********
      2       '   His awesome magic prevents you from attacking.')
  1130 FORMAT('0  A note materializes on the wall which reads:')
  1131 FORMAT('0  EMERGENCY EXIT--The mirror maze will lead you')
- 1132 FORMAT('0  to the locked door.  The exit lies within.')
- 1133 FORMAT('0  The wizard raises his staff. You are'
+ 1132 FORMAT('   to the locked door.  The exit lies within.')
+ 1133 FORMAT('0  The wizard raises his staff. You are',
      2       ' blinded by a sudden explosion of light.')
  1134 FORMAT('0  The walls of the cavern tremble as you unleash the',
      2  /,   '   terrible power contained in the sword.')
