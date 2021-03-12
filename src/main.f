@@ -1805,7 +1805,7 @@ C    *********
  1056 FORMAT('0  You just murdered an innocent hunchback.')
  1057 FORMAT('0  There is nothing here to shoot.')
  1058 FORMAT('0  The bullet does not penetrate the bat''s thick hide.')
- 1059 FORMAT('0  You swan dive off the tower and drown in the moat.')
+ 1059 FORMAT('0  You swan dive off the tower and drown in the moat .')
  1060 FORMAT('0  You don''t have the sword with you.')
  1061 FORMAT('0  The acid dissolves the bars.  The window is clear.')
  1062 FORMAT('0  The werewolf howls in pain and runs away.')
