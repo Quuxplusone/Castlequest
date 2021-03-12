@@ -42,10 +42,10 @@ C
       IF (DEBUG) WRITE(6,9898) FF, LL
  9898 FORMAT('0  THE FIRST AND LAST LINE OF LONG ARE: ',2I5)
       DO 10 II=FF,LL
-        DO 5 J=1,20
-             FMT(J) = LONG(II,J)
-    5   CONTINUE
-        WRITE(6,FMT)
+           DO 5 J=1,20
+                FMT(J) = LONG(II,J)
+    5      CONTINUE
+           WRITE(6,FMT)
    10 CONTINUE
       GOTO 900
    50 CONTINUE
@@ -116,7 +116,7 @@ C
  7014 FORMAT('   Your head is spinning as you emerge and find',
      2       '...',/' ')
  7015 FORMAT('0  You seem to have died again.  I can try and ')
- 7016 FORMAT('   reincarnate you, but you''re taxing my ',
+ 7016 FORMAT('   reincarnate you, but you''re taxing my  ',
      2       'patience.')
  7017 FORMAT('0  Would you like me to try??')
  7018 FORMAT('0  You float aimlessly through a green mist which')
