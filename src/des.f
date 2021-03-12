@@ -116,7 +116,7 @@ C
  7014 FORMAT('   Your head is spinning as you emerge and find',
      2       '...',/' ')
  7015 FORMAT('0  You seem to have died again.  I can try and ')
- 7016 FORMAT('   reincarnate you, but you''re taxing my ',
+ 7016 FORMAT('   reincarnate you, but you''re taxing my  ',
      2       'patience.')
  7017 FORMAT('0  Would you like me to try??')
  7018 FORMAT('0  You float aimlessly through a green mist which')
