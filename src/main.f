@@ -1825,7 +1825,7 @@ C    *********
  1073 FORMAT('0  OK, from now on I will give only short descriptions.')
  1074 FORMAT('0  You have nothing to carry it in.')
  1075 FORMAT('0  You have nothing to light it with.')
- 1076 FORMAT('0  I hate to tell you this, but you can''t swim.')
+ 1076 FORMAT('0  I hate to tell you this, but I can''t swim.')
  1077 FORMAT('0  You fall in the dark and break your neck.')
  1078 FORMAT('0  You haven''t any water.')
  1079 FORMAT('0  You bring it to the height of ecstasy.')
