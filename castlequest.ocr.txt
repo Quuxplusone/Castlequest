@@ -2208,7 +2208,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0030       800 CONTINUE                                                          WWO00290
    ISN 0031           II = 0                                                            WWO00300
                 C SWIPE AND RUN AWAY.                                                   WWO00310
-   ISN 0032           IF (VAL .LT. 900) GOTO 900                                        WWO00320
+   ISN 0032           IF (VAL .LT. .900) GOTO 900                                       WWO00320
    ISN 0034                WRITE(6,1005)                                                WWO00330
    ISN 0035       900 CONTINUE                                                          WWO00340
    ISN 0036           IF (DEBUG) WRITE(6,8001) WOLF, XLIM                               WWO00350
@@ -2288,10 +2288,10 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0043           IF (DEBUG) WRITE(6,9898) FF, LL                                   DES00420
    ISN 0045      9898 FORMAT('0  THE FIRST AND LAST LINE OF LONG ARE: ',2I5)            DES00430
    ISN 0046           DO 10 II=FF,LL                                                    DES00440
-   ISN 0047             DO 5 J=1,20                                                     DES00450
-   ISN 0048                  FMT(J) = LONG(II,J)                                        DES00460
-   ISN 0049         5   CONTINUE                                                        DES00470
-   ISN 0050             WRITE(6,FMT)                                                    DES00480
+   ISN 0047                DO 5 J=1,20                                                  DES00450
+   ISN 0048                     FMT(J) = LONG(II,J)                                     DES00460
+   ISN 0049         5      CONTINUE                                                     DES00470
+   ISN 0050                WRITE(6,FMT)                                                 DES00480
    ISN 0051        10 CONTINUE                                                          DES00490
    ISN 0052           GOTO 900                                                          DES00500
    ISN 0053        50 CONTINUE                                                          DES00510
@@ -2370,7 +2370,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0111      7014 FORMAT('   Your head is spinning as you emerge and find',         DES01160
                      2       '...',/' ')                                                DES01170
    ISN 0112      7015 FORMAT('0  You seem to have died again.  I can try and ')         DES01180
-   ISN 0113      7016 FORMAT('   reincarnate you, but you''re taxing my ',              DES01190
+   ISN 0113      7016 FORMAT('   reincarnate you, but you''re taxing my  ',             DES01190
                      2       'patience.')                                               DES01200
    ISN 0114      7017 FORMAT('0  Would you like me to try??')                           DES01210
    ISN 0115      7018 FORMAT('0  You float aimlessly through a green mist which')       DES01220
