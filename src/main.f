@@ -1671,8 +1671,8 @@ C     ---DEATH AND REINCARNATION---
       LAMP = 0
       NUMB   = 0
       SCORE  = SCORE - 10
-      GNOME  = .FALSE.
-      WOLF   = .FALSE.
+      GNOME = .FALSE.
+      WOLF  = .FALSE.
       IF (ITEMS(20) .EQ. -1) GUN   = .FALSE.
       IF (ITEMS(18) .EQ. -1) BOTTLE= .FALSE.
       IF (ITEMS(26) .EQ. -1) WATER = .FALSE.
