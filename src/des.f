@@ -42,10 +42,10 @@ C
       IF (DEBUG) WRITE(6,9898) FF, LL
  9898 FORMAT('0  THE FIRST AND LAST LINE OF LONG ARE: ',2I5)
       DO 10 II=FF,LL
-        DO 5 J=1,20
-             FMT(J) = LONG(II,J)
-    5   CONTINUE
-        WRITE(6,FMT)
+           DO 5 J=1,20
+                FMT(J) = LONG(II,J)
+    5      CONTINUE
+           WRITE(6,FMT)
    10 CONTINUE
       GOTO 900
    50 CONTINUE
