@@ -1896,7 +1896,7 @@ C    *********
      2       '   His awesome magic prevents you from attacking.')
  1130 FORMAT('0  A note materializes on the wall which reads:')
  1131 FORMAT('0  EMERGENCY EXIT--The mirror maze will lead you')
- 1132 FORMAT('0  to the locked door.  The exit lies within.')
+ 1132 FORMAT('   to the locked door.  The exit lies within.')
  1133 FORMAT('0  The wizard raises his staff. You are'
      2       ' blinded by a sudden explosion of light.')
  1134 FORMAT('0  The walls of the cavern tremble as you unleash the',
