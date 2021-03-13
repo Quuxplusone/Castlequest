@@ -80,7 +80,7 @@ C     READ(5,1004)(INPUT(L),L=1,5)
 C     IF(LCOMC(3,TME(1),INPUT) .EQ. 0) GOTO 15
 C     WRITE(6,1005)
 C     STOP
-   15 CONTINUE
+  15  CONTINUE
 C
       DO 18 I=1,400
            SAVAR(I) = 0
