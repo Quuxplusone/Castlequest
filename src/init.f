@@ -162,7 +162,7 @@ C***
      *'(       ','LRECL  ','80      ','RECFM   ','F       ')
       CALL CMS('FI      ','11      ','DISK    ','INST    ','CQDATA  ',
      *'(       ','LRECL  ','80      ','RECFM   ','F       ')
-      CALL CMS('FI      ','12       ','DISK    ','LONG   ','CQDATA  ',
+      CALL CMS('FI      ','12      ','DISK    ','LONG    ','CQDATA  ',
      *'(       ','LRECL  ','80      ','RECFM   ','F       ')
 C
       DO 20 I=1,100
