@@ -2740,7 +2740,6 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                 C                                                                       INI00100
    ISN 0008           INTEGER ITEMS(30), VALUE(30), WHER(10), DOOR(100)                 INI00110
                 C                                                                       INI00120
-
    ISN 0009           INTEGER   ROOM,  LROOM, SHUTTR,   ROPE,                           INI00130
                      2         HUNCH,  MATCH, MASTER, NOTVAL, LOKVAL, BUTVAL,           INI00140
                      3        ROPVAL,  WIND1,  WIND2,  SCORE,                           INI00150
@@ -2815,7 +2814,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                 C     IF(LCOMC(3,TME(1),INPUT) .EQ. 0) GOTO 15                          INI00800
                 C     WRITE(6,1005)                                                     INI00810
                 C     STOP                                                              INI00820
-   ISN 0021        15 CONTINUE                                                          INI00830
+   ISN 0021       15  CONTINUE                                                          INI00830
                 C                                                                       INI00840
    ISN 0022           DO 18 I=1,400                                                     INI00850
    ISN 0023                SAVAR(I) = 0                                                 INI00860
@@ -2901,7 +2900,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      *'(       ','LRECL  ','80      ','RECFM   ','F       ')            INI01620
    ISN 0086           CALL CMS('FI      ','11      ','DISK    ','INST    ','CQDATA  ',  INI01630
                      *'(       ','LRECL  ','80      ','RECFM   ','F       ')            INI01640
-   ISN 0087           CALL CMS('FI      ','12       ','DISK    ','LONG   ','CQDATA  ',  INI01650
+   ISN 0087           CALL CMS('FI      ','12      ','DISK    ','LONG    ','CQDATA  ',  INI01650
                      *'(       ','LRECL  ','80      ','RECFM   ','F       ')            INI01660
                 C                                                                       INI01670
    ISN 0088           DO 20 I=1,100                                                     INI01680
@@ -3008,7 +3007,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0026           DO 10 II=1,NITEMS                                                 INV00360
    ISN 0027              IF (ITEMS(II) .EQ. -1) WRITE(6,2000) OBJ(II)                   INV00370
    ISN 0029              IF (ITEMS(II) .EQ. -1) NUMB = NUMB + 1                         INV00380
-   ISN 0031        10 CONTINUE                                                          INV00390
+   ISN 0031       10  CONTINUE                                                          INV00390
    ISN 0032           IF (BOTTLE) ITEMS(18) = -1                                        INV00400
    ISN 0034           IF (.NOT. GUN) GOTO 15                                            INV00410
    ISN 0036                ITEMS(20) = -1                                               INV00420
@@ -3020,7 +3019,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
    ISN 0043           WRITE(6,3000)                                                     INV00480
    ISN 0044           RETURN                                                            INV00490
    ISN 0045      1000 FORMAT('0  You are carrying the following ',I2,' objects:')       INV00500
-   ISN 0046      1010 FORMAT('0  You are carrying the following object:')               INV00510
+   ISN 0046      1010  FORMAT('0  You are carrying the following object:')              INV00510
    ISN 0047      2000 FORMAT(6X,2A8)                                                    INV00520
    ISN 0048      3000 FORMAT('0  You''re not carrying anything.')                       INV00530
 
@@ -3116,7 +3115,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      8               0,  0,  0,  0,  9,  0, 27,  0,  0,  0,
                      9               0,  0,  0,  0,  0,  0,  0,  0, -1,  0,
                      X              26,  0,  0,  0,  0,  0, 39,  0,  0,  0 /
-   ISN 0008           DATA  W4   /   0,  0,  0,  0,  6,  5 * 0,
+   ISN 0008           DATA W4    /   0,  0,  0,  0,  6,  5 * 0,
                      2               0,  0,  0,  0, 26,  0,  0,  0,  0,  0,
                      3               0,  0,  0,  0,  3,  0,  0,  0,  0,  0,
                      4               0,  0, 16,  0,  0, 35,  0, 36,  0,  0,
@@ -3130,7 +3129,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
 @@56@@
  LEVEL 2.3.0 (JUNE 78)          MOVE          OS/360  FORTRAN H EXTENDED            DATE 81.295/09.32.41       PAGE   2
 
-   ISN 0009           DATA  W5   /   0,  0, 23,  0,  0,  0, 43, 42,  0, 42,
+   ISN 0009           DATA W5    /   0,  0, 23,  0,  0,  0, 43, 42,  0, 42,
                      2               0,  0,  0, 41,  0,  0,  0,  0, 41,  0,
                      3               0,  0, 41, 7 * 0,
                      4               0,  0,  0,  0, 45,  0,  0,  0,  4,  0,
@@ -3140,7 +3139,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      8              56,  0,  0,  0, 69,  0, 47,  0, 69,  0,
                      9              57,  0, 47,  0, 50,  0,  0,  0,  0,  0,
                      X               0,  0, 49,  0, 66,  0, 53,  0,  0,  0 /
-   ISN 0010           DATA  W6   /   0, 55,  0,  0,  0, 54,  0,  0,  0,  0,
+   ISN 0010           DATA W6   /    0, 55,  0,  0,  0, 54,  0,  0,  0,  0,
                      2               0,  0, 53,  0,  0,  0,  0,  0,  0,  0,
                      3               0,  0, 50,  0,  0,  0, 52,  0,  0,  0,
                      4               0, 51,  0,  0,  0,  0, 46,  0,  0,  0,
@@ -3150,7 +3149,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      8              58, 60, 61, 59, 61, 63, 59, 57, 58, 58,
                      9              59, 61, 58, 60, 63, 60, 57, 58, 59, 64,
                      X              58, 60, 59, 61, 61, 57, 59, 62, 60, 60 /
-   ISN 0011           DATA  W7   /  59, 61, 60, 58, 57, 60, 62, 58, 61, 61,
+   ISN 0011           DATA W7   /   59, 61, 60, 58, 57, 60, 62, 58, 61, 61,
                      2              57, 63, 58, 59, 60, 61, 64, 62, 62, 65,
                      3              62, 57, 60, 61, 64, 63, 58, 59, 74, 63,
                      4              58, 59, 60, 58, 59, 60, 58, 59, 60, 58,
@@ -3160,7 +3159,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      8               0,  0,  0,  0,  0,  0, 66,  0, 67,  0,
                      9              48,  0, 70,  0,  0,  0,  0,  0,  0, 48,
                      X               0,  0,  0,  0,  0,  0, 69,  0,  0, 71 /
-   ISN 0012           DATA  W8   /   0,  0,  0,  0,  0,  0, 72,  0,-70,  0,
+   ISN 0012           DATA W8   /    0,  0,  0,  0,  0,  0, 72,  0,-70,  0,
                      2               0,  0, 71,  0,  0,  0,  0,  0,  0,  0,
                      3               0,  0, 65,  0, 74,  0,  0,  0,  0,  0,
                      4              73,  0, 63,  0, 75,  0, 77,  0,  0,  0,
@@ -3170,7 +3169,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      8               0,  0,  0,  0,  0,  0, 79,  0,  0, 65,
                      9               0,  0, 78,  0,  0,  0, 80,  0,  0,  0,
                      X               0,  0, 79,  0,  0,  0,  0,  0,-40,  0 /
-   ISN 0013           DATA  W9   /   0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
+   ISN 0013           DATA W9     /  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,
                      2               0,  0, 75,  0, 83,  0,  0,  0,  0,  0,
                      3              82,  0, 77,  0,  0,  0,  0,  0,-84,  0,
                      4               0,  0, 85,  0,  0,  0, 86,  0,  0,-83,
@@ -3180,7 +3179,7 @@ OPTIONS IN EFFECT: NAME(MAIN) NOOPTIMIZE LINECOUNT(60) SIZE(MAX) AUTODBL(NONE)
                      8              86, 9*0,
                      9               0,  0,  0,  0,  0,  0, 90,  0,  0,  0,
                      X               0,  0, 89,  0, 65,  0,  0,  0,  0,  0 /
-   ISN 0014           DATA  W10  /  92,  0, 86,  0,  0,  0,  0,  0,  0,  0,
+   ISN 0014           DATA W10   /  92,  0, 86,  0,  0,  0,  0,  0,  0,  0,
                      2             -93,  0,  0,  0, 91,  0,  0,  0,  0,  0,
                      3               0,  0, 91,  0, 92,  0,-94,  0,  0,  0,
                      4               0,  0, 93,  0,  0,  0,  0,  0,  0,  0,
