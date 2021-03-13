@@ -48,7 +48,7 @@ C
       WRITE(6,3000)
       RETURN
  1000 FORMAT('0  You are carrying the following ',I2,' objects:')
- 1010 FORMAT('0  You are carrying the following object:')
+ 1010  FORMAT('0  You are carrying the following object:')
  2000 FORMAT(6X,2A8)
  3000 FORMAT('0  You''re not carrying anything.')
       END
