@@ -10,7 +10,6 @@ C
 C
       INTEGER ITEMS(30), VALUE(30), WHER(10), DOOR(100)
 C
-
       INTEGER   ROOM,  LROOM, SHUTTR,   ROPE,
      2         HUNCH,  MATCH, MASTER, NOTVAL, LOKVAL, BUTVAL,
      3        ROPVAL,  WIND1,  WIND2,  SCORE,
@@ -81,7 +80,7 @@ C     READ(5,1004)(INPUT(L),L=1,5)
 C     IF(LCOMC(3,TME(1),INPUT) .EQ. 0) GOTO 15
 C     WRITE(6,1005)
 C     STOP
-   15 CONTINUE
+  15  CONTINUE
 C
       DO 18 I=1,400
            SAVAR(I) = 0
@@ -163,7 +162,7 @@ C***
      *'(       ','LRECL  ','80      ','RECFM   ','F       ')
       CALL CMS('FI      ','11      ','DISK    ','INST    ','CQDATA  ',
      *'(       ','LRECL  ','80      ','RECFM   ','F       ')
-      CALL CMS('FI      ','12       ','DISK    ','LONG   ','CQDATA  ',
+      CALL CMS('FI      ','12      ','DISK    ','LONG    ','CQDATA  ',
      *'(       ','LRECL  ','80      ','RECFM   ','F       ')
 C
       DO 20 I=1,100

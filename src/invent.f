@@ -36,7 +36,7 @@ C
       DO 10 II=1,NITEMS
          IF (ITEMS(II) .EQ. -1) WRITE(6,2000) OBJ(II)
          IF (ITEMS(II) .EQ. -1) NUMB = NUMB + 1
-   10 CONTINUE
+  10  CONTINUE
       IF (BOTTLE) ITEMS(18) = -1
       IF (.NOT. GUN) GOTO 15
            ITEMS(20) = -1
@@ -48,7 +48,7 @@ C
       WRITE(6,3000)
       RETURN
  1000 FORMAT('0  You are carrying the following ',I2,' objects:')
- 1010 FORMAT('0  You are carrying the following object:')
+ 1010  FORMAT('0  You are carrying the following object:')
  2000 FORMAT(6X,2A8)
  3000 FORMAT('0  You''re not carrying anything.')
       END
