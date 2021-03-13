@@ -36,7 +36,7 @@ C
       DO 10 II=1,NITEMS
          IF (ITEMS(II) .EQ. -1) WRITE(6,2000) OBJ(II)
          IF (ITEMS(II) .EQ. -1) NUMB = NUMB + 1
-   10 CONTINUE
+  10  CONTINUE
       IF (BOTTLE) ITEMS(18) = -1
       IF (.NOT. GUN) GOTO 15
            ITEMS(20) = -1
