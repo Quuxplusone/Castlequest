@@ -2,6 +2,7 @@ C---------------------------------------------------
       SUBROUTINE WWOLF(II,WOLF)
       LOGICAL WOLF, DEBUG
       COMMON    DEBUG, ISEED
+      SAVE XLIM
 C
 C     SEED = FLOAT(ISEED)
       VAL = RDM(SEED)

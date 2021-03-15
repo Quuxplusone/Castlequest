@@ -2,6 +2,7 @@ C---------------------------------------------------------------
       SUBROUTINE GGNOME(II,GNOME)
       LOGICAL GNOME, DEBUG
       COMMON DEBUG, ISEED
+      SAVE XLIM
 C
       SEED = FLOAT(ISEED)
       VAL = RDM(SEED)
