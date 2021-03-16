@@ -47,7 +47,10 @@ when it prints the character `0` in column 1, it's expecting that
 the printer hardware will turn that into an extra newline.
 Naturally, modern terminals don't do that. But many POSIX systems
 (including Mac OSX) come with a utility program named `asa` that
-can interpret those carriage-control characters for you. If your
-computer lacks `asa`, you can hack it together in a couple lines
-of your favorite scripting language; or, just deal with the extra
-`0` characters and fewer newlines.
+can interpret those carriage-control characters for you.
+
+If your computer lacks `asa`, you can hack it together in a
+couple lines of your favorite scripting language; a Python
+implementation is provided in the `src` directory.
+
+    ./cquest | python ./asa.py
