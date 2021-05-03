@@ -11,7 +11,7 @@
 ('   vault.  Notice that the descriptions of treasures have an')
 ('   exclamation point.  Be wary, as many dangers await you in')
 ('   in the castle.')
-('0  To supress the long room descriptions, type "BRIEF".  To')
+('0  To suppress the long room descriptions, type "BRIEF".  To')
 ('   return to the long room descriptions, use the command "LONG".')
 ('   "SCORE" will give you your present score in the game.  "HELP"')
 ('   will give you a hint about an object in the room, but it will')
