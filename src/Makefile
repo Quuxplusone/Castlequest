@@ -1,16 +1,9 @@
-ifneq (, $(shell which f77))
-FORTRAN:=f77
-else ifneq (, $(shell which gfortran))
-FORTRAN:=gfortran -std=legacy
-else
-$(error I couldn't find any way to compile Fortran on your system!)
-endif
+cquest:
+	@echo ""
+	@echo "Please 'git checkout patches' before trying to 'make'!"
+	@echo ""
+	@echo "Or, 'git checkout patches -- Makefile' if you want to try"
+	@echo "compiling the original code (which is expected to fail)."
+	@echo ""
 
-cquest: adscor.o des.o fread.o ggnome.o help.o init.o input.o invent.o isig.o main.o move.o obj.o rstart.o savres.o wwolf.o yorn.o
-	$(FORTRAN) $^ -o cquest
-
-%.o: %.f
-	$(FORTRAN) -c $< -o $@
-
-clean:
-	rm -f cquest *.o
+.PHONY: cquest
